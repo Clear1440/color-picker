@@ -1,5 +1,4 @@
 import React from "react"
-import { Box } from "@mui/system"
 import { NavBar } from "../components/navebar"
 
 const HomeScreen = () => {
