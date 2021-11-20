@@ -52,8 +52,8 @@ const HomeScreen = () => {
             <h5>Available Profiles for This Site</h5>
                 <List className="content">
                     { items?.map((entry) => 
-                    <ListItemButton onClick={() => clickHandler(entry.id)} className="entry-wrapper">
-                            <ListItem className="entry-item">
+                    <ListItemButton key={entry.id} onClick={() => clickHandler(entry.id)} className="entry-wrapper">
+                            <ListItem className="entry-item" >
                                 <ListItemAvatar className="profile-icon">
                                     <Avatar src=""/>
                                 </ListItemAvatar>
