@@ -1,8 +1,8 @@
 {
-    "short_name": "BgColor Change",
-    "name": "Change background color",
+    "short_name": "Color Picker",
+    "name": "Color Picker",
     "version": "1.0.0",
-    "manifest_version": 2,
+    "manifest_version":2,
     "permissions": [
       "storage",
       "tabs",
@@ -11,7 +11,7 @@
       "https://*/*"
     ],
     "browser_action": {
-      "default_popup": "extension/build/index.html",
+      "default_popup": "index.html",
       "default_icon": {
         "16": "src/img/logo.png",
         "32": "src/img/logo.png",
@@ -20,10 +20,10 @@
       }
     },
     "icons": {
-      "16": "src/img/logo.png",
-      "32": "src/img/logo.png",
-      "48": "src/img/logo.png",
-      "128": "src/img/logo.png"
+        "16": "src/img/logo.png",
+        "32": "src/img/logo.png",
+        "48": "src/img/logo.png",
+        "128": "src/img/logo.png"
     },
-    "content_security_policy": "script-src 'self' 'sha256-fdAfMKZtCTRPKMRznGwonJHC++vCCrQS7XFnVrzSXAE=' 'sha256-YD8w9VLrdvqI5/tFVmpT+1337ly+e/JvPrkRxYZo/w4='; object-src 'self';"
-  }
+    "content_security_policy": "script-src 'self' 'sha256-fdAfMKZtCTRPKMRznGwonJHC++vCCrQS7XFnVrzSXAE=' 'sha256-YD8w9VLrdvqI5/tFVmpT+1337ly+e/JvPrkRxYZo/w4='; object-src 'self'; "
+}
