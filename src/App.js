@@ -1,11 +1,11 @@
 import './App.css';
-import HomeScreen from './container/homescreen';
+import Routing from './components/router';
 
 function App() {
     return ( 
     <div className = "App" >
         <header className = "App-header" >
-            <HomeScreen />
+            <Routing/>
         </header>  
     </div>
     );

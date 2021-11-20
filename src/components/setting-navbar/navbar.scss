@@ -1,0 +1,19 @@
+.navbar{
+    display: inline-flex;
+    justify-content: space-between;
+    align-content: center;   
+    margin: 10px 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid gray;
+
+    .icon {
+        color: black;
+    }
+
+    h6 {
+        margin: 0;
+        color: black;
+        align-self: center;
+        font-size: large;
+    }
+}

@@ -1,0 +1,10 @@
+.MuiFormControl-root{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 0 20px !important;
+
+    .MuiInputLabel-root{
+        padding-left: 25px;
+    }
+}
