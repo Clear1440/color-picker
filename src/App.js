@@ -1,6 +1,5 @@
 import './App.css';
-import "./container/homeScreen";
-import HomeScreen from './container/homeScreen';
+import HomeScreen from './container/homescreen';
 
 function App() {
     return ( 
