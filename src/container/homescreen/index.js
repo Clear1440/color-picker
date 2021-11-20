@@ -7,9 +7,10 @@ import Avatar from '@mui/material/Avatar';
 import ListItemButton from "@mui/material/ListItemButton";
 import Button from "@mui/material/Button";
 //CUSTOM COMPONENTS
-import { NavBar } from "../../components/navbar";
+import NavBar from "../../components/home-navbar";
 //STYLES
 import "../../stylesheets/layout/page.scss"
+
 
 const HomeScreen = () => {
     const [items,setItems] = useState([
@@ -34,7 +35,7 @@ const HomeScreen = () => {
     }
 
     const clickHandlerSelected = id => {
-        console.log("route to settings page");
+        console.log('navigate to selected');
     }
 
     return ( 

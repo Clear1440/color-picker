@@ -3,11 +3,13 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import SettingsIcon from '@mui/icons-material/Settings';
 import "./navbar.scss";
 import { IconButton } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-export const NavBar = () => {
+const NavBar = () => {
+    let navigate = useNavigate();
     return ( 
         <div className="navbar">
-            <IconButton onClick={() => console.log('go back settings')}>
+            <IconButton onClick={() => navigate('settings')}>
                 <SettingsIcon className="icon"/>
             </IconButton>
             <h6> Color Picker </h6>
@@ -17,3 +19,5 @@ export const NavBar = () => {
         </div >
     );
 }
+
+export default NavBar;
