@@ -1,6 +1,51 @@
 .page {
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    height: 400px;
-    width: 300px;
+    height: 500px;
+    width: 400px;
     border-radius: 10px;
+    .selected{
+        background-color: aquamarine;
+    }
+    .profile-icon {
+        font-size: xx-small;
+    }
+
+    .content {
+        overflow: auto;
+        height: auto;
+    }
+
+    .entry-wrapper{
+        width: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+
+        .entry-item{
+            color: black;
+            display: flex;
+            background-color: tan;
+            border-radius: 15px;
+            justify-content: flex-start;
+            align-content: center;
+        }
+        .entry-item:hover{
+        background-color: green;
+        }
+    }
+
+    .market-button {
+        border-radius: 0;
+    }
+
+    h6{
+        margin: 0;
+    }
+    h5 {
+        margin: 5px 0;
+        color: black;
+    }
+
 }

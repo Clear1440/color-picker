@@ -1,5 +1,5 @@
 import React from "react"
-import HomeIcon from '@mui/icons-material/Home';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import SettingsIcon from '@mui/icons-material/Settings';
 import "./navbar.scss";
 import { IconButton } from "@mui/material";
@@ -12,7 +12,7 @@ export const NavBar = () => {
             </IconButton>
             <h6> Color Picker </h6>
             <IconButton onClick={() => console.log('go home')}>
-                <HomeIcon className="icon"/> 
+                <FavoriteIcon className="icon"/> 
             </IconButton>
         </div >
     );
