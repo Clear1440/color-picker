@@ -15,9 +15,9 @@ const HomeScreen = () => {
     const [items,setItems] = useState([
             {name:'Pinky',avatar:'example',id:1},
             {name:'Army Green',avatar:'example',id:2},
-            {name:'Army Green',avatar:'example',id:3},
-            {name:'Army Green',avatar:'example',id:4},
-            {name:'Army Green',avatar:'example',id:5},
+            {name:'Montaray',avatar:'example',id:3},
+            {name:'Mosago',avatar:'example',id:4},
+            {name:'Triage',avatar:'example',id:5},
             {name:'Klimindor',avatar:'example',id:6}]);
 
     const [selectedItem, setSelectedItem] = useState({name:'Blues',avatar:'example',id:7,selected:false});
@@ -33,10 +33,14 @@ const HomeScreen = () => {
         setItems(_items.sort((a,b) =>  a.name.localeCompare(b.name)));
     }
 
+    const clickHandlerSelected = id => {
+        console.log("route to settings page");
+    }
+
     return ( 
         <div className="page">
             <NavBar/>
-            <ListItemButton disabled onClick={clickHandler} className="entry-wrapper">
+            <ListItemButton onClick={() => clickHandlerSelected(selectedItem.id)} className="entry-wrapper">
                     <ListItem className="entry-item selected">
                                 <ListItemAvatar className="profile-icon">
                             <Avatar src=""/>
