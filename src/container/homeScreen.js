@@ -1,11 +1,11 @@
 import React from "react"
 import { Box } from "@mui/system"
-
-
+import { NavBar } from "../components/navebar"
 
 const HomeScreen = () => {
     return ( 
-        <div >
+        <div style={{backgroundColor: "green"}}>
+            <NavBar/>
             <h1> Hellow Box </h1>  
         </div >
     );
