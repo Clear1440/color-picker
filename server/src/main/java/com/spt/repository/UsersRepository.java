@@ -8,10 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public abstract class UsersRepository implements CrudRepository<User, Integer> {
+public interface UsersRepository extends CrudRepository<User, Integer> {
     @Query(nativeQuery = true,
             value = "SELECT * FROM users")
-    public List<User> findAllUsers() {
-        return null;
-    }
+    List<User> findAllUsers();
 }

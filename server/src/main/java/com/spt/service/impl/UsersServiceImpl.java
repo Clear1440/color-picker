@@ -1,12 +1,13 @@
 package com.spt.service.impl;
 
-import com.spt.entity.User;
+import com.spt.atom.User;
 import com.spt.repository.UsersRepository;
 import com.spt.service.UsersService;
 
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UsersServiceImpl implements UsersService{
@@ -21,6 +22,8 @@ public class UsersServiceImpl implements UsersService{
 
     @Override
     public List<User> fetchAllUsers(){
-        return usersRepository.findAllUsers();
+        return ((List<com.spt.entity.User>) usersRepository.findAll()).stream()
+                .map(com.spt.entity.User::toAtom)
+                .collect(Collectors.toList());
     }
 }

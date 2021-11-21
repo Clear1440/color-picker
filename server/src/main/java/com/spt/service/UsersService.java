@@ -1,6 +1,6 @@
 package com.spt.service;
 
-import com.spt.entity.User;
+import com.spt.atom.User;
 
 import java.util.List;
 
