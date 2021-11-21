@@ -2,7 +2,7 @@ import HomeScreen from "../../container/homescreen";
 import SettingsScreen from "../../container/settingscreen";
 
 import {
-    BrowserRouter,
+    MemoryRouter,
     Routes,
     Route
   } from "react-router-dom";
@@ -10,12 +10,12 @@ import {
 
 const Routing = () => {
     return(
-        <BrowserRouter>
+        <MemoryRouter>
             <Routes>
                 <Route path="/" element={<HomeScreen />} />
                 <Route path="settings" element={<SettingsScreen />} />
             </Routes>
-        </BrowserRouter>
+        </MemoryRouter>
     );
 }
 
