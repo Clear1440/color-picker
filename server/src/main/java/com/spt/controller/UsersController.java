@@ -23,13 +23,6 @@ public class UsersController {
 
     @RequestMapping(
         method = RequestMethod.GET,
-        value = "/hello-world")
-        public ResponseEntity<String> helloWorld(){
-            return new ResponseEntity<String>(usersService.helloWorld(), HttpStatus.OK);
-        }
-
-    @RequestMapping(
-        method = RequestMethod.GET,
         value = "")
         public ResponseEntity<List<User>> getUsers(){
             return new ResponseEntity<>(usersService.fetchAllUsers(), HttpStatus.OK);

@@ -16,11 +16,6 @@ public class UsersServiceImpl implements UsersService{
     public UsersServiceImpl(UsersRepository usersRepository){ this.usersRepository = usersRepository; }
 
     @Override
-    public String helloWorld(){
-        return "hello World";
-    }
-
-    @Override
     public List<User> fetchAllUsers(){
         return ((List<com.spt.entity.User>) usersRepository.findAll()).stream()
                 .map(com.spt.entity.User::toAtom)

@@ -54,6 +54,12 @@
         .entry-item:hover{
             background-color: green;
         }
+
+        .entry-action-container {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+        }
     }
 
     .market-button {

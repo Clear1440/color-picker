@@ -13,7 +13,7 @@ const NavBar = () => {
                 <SettingsIcon className="icon"/>
             </IconButton>
             <h6> Color Picker </h6>
-            <IconButton onClick={() => console.log('go home')}>
+            <IconButton onClick={() => {navigate('favorites');}}>
                 <FavoriteIcon className="icon"/> 
             </IconButton>
         </div >
