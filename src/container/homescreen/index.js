@@ -5,9 +5,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import ListItemButton from "@mui/material/ListItemButton";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 //CUSTOM COMPONENTS
-import NavBar from "../../components/home-navbar";
+import NavBar from "./home-navbar";
 //STYLES
 import "../../stylesheets/layout/page.scss"
 
@@ -62,7 +62,7 @@ const HomeScreen = () => {
                     </ListItemButton>
                     )}           
                 </List> 
-            <Button className="market-button" variant="contained">MarketPlace</Button> 
+            {/* <Button className="market-button" variant="contained">MarketPlace</Button>  */}
         </div>
     );
 }

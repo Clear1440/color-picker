@@ -1,6 +1,6 @@
 //react
 import React from 'react';
-import NavBar from '../../components/setting-navbar';
+import NavBar from './setting-navbar';
 import Select from '@mui/material/Select'
 import FormControl from '@mui/material/FormControl'
 import { useState } from 'react';
