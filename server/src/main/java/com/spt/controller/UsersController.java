@@ -24,8 +24,8 @@ public class UsersController {
     }
 
     @GetMapping(value="/get-user/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") int id){
-        return new ResponseEntity<User>(usersService.fetchUserById(id), HttpStatus.OK);
+    public ResponseEntity<User> getUserById(@ModelAttribute("id") com.spt.entity.User user){
+        return new ResponseEntity<User>(user.toAtom(), HttpStatus.OK);
     }
 
     @GetMapping(value="/get-users-by-active-status/{active}")
