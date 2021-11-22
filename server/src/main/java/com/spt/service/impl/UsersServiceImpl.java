@@ -1,6 +1,7 @@
 package com.spt.service.impl;
 
 import com.spt.atom.User;
+import com.spt.atom.UsersAppThemeProjection;
 import com.spt.repository.UsersRepository;
 import com.spt.service.UsersService;
 
@@ -39,5 +40,10 @@ public class UsersServiceImpl implements UsersService{
         return usersRepository.fetchUsersByUsernameDomain("%@"+domain).stream()
                 .map(com.spt.entity.User::toAtom)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public UsersAppThemeProjection fetchColorPaletteById(int id){
+        return usersRepository.fetchColorPaletteById(id);
     }
 }

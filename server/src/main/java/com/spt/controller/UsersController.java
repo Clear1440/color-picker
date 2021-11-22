@@ -1,6 +1,7 @@
 package com.spt.controller;
 
 import com.spt.atom.User;
+import com.spt.atom.UsersAppThemeProjection;
 import com.spt.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,5 +37,10 @@ public class UsersController {
     @GetMapping(value="/get-users-by-email-domain/{domain}")
     ResponseEntity<List<User>> getUsersByUsernameDomain(@PathVariable("domain") String domain){
         return new ResponseEntity<List<User>>(usersService.fetchUserByUsernameDomain(domain), HttpStatus.OK);
+    }
+
+    @GetMapping(value="/get-color-palette/{id}")
+    ResponseEntity<UsersAppThemeProjection> getColorPaletteByUserid(@PathVariable("id") int id){
+        return new ResponseEntity<UsersAppThemeProjection>(usersService.fetchColorPaletteById(id),HttpStatus.OK);
     }
 }

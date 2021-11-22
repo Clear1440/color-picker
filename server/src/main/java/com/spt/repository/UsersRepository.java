@@ -1,5 +1,6 @@
 package com.spt.repository;
 
+import com.spt.atom.UsersAppThemeProjection;
 import com.spt.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -31,5 +32,12 @@ public interface UsersRepository extends CrudRepository<User, Integer> {
     )
     List<User> fetchUsersByUsernameDomain(String domain);
 
+    @Query(nativeQuery = true,
+            value = "SELECT usr.firstname, usr.lastname, apt.primary_color, apt.secondary_color FROM users usr " +
+                    "LEFT JOIN user_prefences up ON up.user_id = usr.user_id " +
+                    "LEFT JOIN app_themes apt ON apt.app_theme_id = up.app_theme_id " +
+                    "WHERE usr.user_id = :id"
+    )
+    UsersAppThemeProjection fetchColorPaletteById(int id);
 
 }
