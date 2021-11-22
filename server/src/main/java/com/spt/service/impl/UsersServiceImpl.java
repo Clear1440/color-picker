@@ -17,7 +17,26 @@ public class UsersServiceImpl implements UsersService{
 
     @Override
     public List<User> fetchAllUsers(){
-        return ((List<com.spt.entity.User>) usersRepository.findAll()).stream()
+        return usersRepository.findAllUsers().stream()
+                .map(com.spt.entity.User::toAtom)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public User fetchUserById(int id) {
+        return usersRepository.findById(id).toAtom();
+    }
+
+    @Override
+    public List<User> fetchUsersByActiveStatus(boolean status) {
+        return usersRepository.fetchUsersByActiveStatus(status).stream()
+                .map(com.spt.entity.User::toAtom)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<User> fetchUserByUsernameDomain(String domain) {
+        return usersRepository.fetchUsersByUsernameDomain("%@"+domain).stream()
                 .map(com.spt.entity.User::toAtom)
                 .collect(Collectors.toList());
     }

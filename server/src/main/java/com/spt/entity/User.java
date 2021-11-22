@@ -21,6 +21,9 @@ public class User {
     @Column(length = 50)
     private String lastname;
 
+    @Column(length = 50)
+    private String username;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_created", insertable = false)
     private Date dateCreated;
