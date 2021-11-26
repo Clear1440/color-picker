@@ -43,7 +43,7 @@ const HomeScreen = () => {
             <NavBar/>
             <ListItemButton onClick={() => clickHandlerSelected(selectedItem.id)} className="entry-wrapper">
                     <ListItem className="entry-item selected">
-                                <ListItemAvatar className="profile-icon">
+                                <ListItemAvatar>
                             <Avatar src=""/>
                         </ListItemAvatar>
                         <h6>{selectedItem.name}</h6>
@@ -54,7 +54,7 @@ const HomeScreen = () => {
                     { items?.map((entry) => 
                     <ListItemButton key={entry.id} onClick={() => clickHandler(entry.id)} className="entry-wrapper">
                             <ListItem className="entry-item" >
-                                <ListItemAvatar className="profile-icon">
+                                <ListItemAvatar>
                                     <Avatar src=""/>
                                 </ListItemAvatar>
                                 <h6>{entry.name}</h6>

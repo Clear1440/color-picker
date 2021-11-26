@@ -38,7 +38,7 @@ const FactoritesScreen = () => {
                 { items.map((entry) => 
                 <ListItemButton key={entry.id} className="entry-wrapper">
                         <ListItem className="entry-item" >
-                            <ListItemAvatar className="profile-icon">
+                            <ListItemAvatar>
                                 <Avatar src=""/>
                             </ListItemAvatar>
                             <h6>{entry.name}</h6>

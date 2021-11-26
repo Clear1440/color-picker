@@ -10,11 +10,11 @@ const NavBar = () => {
     return ( 
         <div className="navbar">
             <IconButton onClick={() => navigate('settings')}>
-                <SettingsIcon className="icon"/>
+                <SettingsIcon className="cog"/>
             </IconButton>
             <h6> Color Picker </h6>
             <IconButton onClick={() => {navigate('favorites');}}>
-                <FavoriteIcon className="icon"/> 
+                <FavoriteIcon className="heart"/>
             </IconButton>
         </div >
     );
