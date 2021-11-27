@@ -24,9 +24,15 @@ const SettingsScreen = () => {
     return(
         <div className="page">
             <NavBar />
-            <FormControl className='form'>
-                <InputLabel htmlFor="appTheme" shrink={true}>App Theme</InputLabel>
+            <FormControl className='form' variant="outlined">
+                <InputLabel
+                    className="settings-label"
+                    htmlFor="appTheme"
+                    shrink={true}>
+                    App Theme
+                </InputLabel>
                 <Select
+                    className="settings-border"
                     id="demo-simple-select"
                     value={editSettings.appTheme}
                     native
