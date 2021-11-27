@@ -10,9 +10,11 @@ import ListItemButton from "@mui/material/ListItemButton";
 import NavBar from "./home-navbar";
 //STYLES
 import "../../stylesheets/layout/page.scss"
+import {useNavigate} from "react-router-dom";
 
 
 const HomeScreen = () => {
+    let navigate = useNavigate();
     const [items,setItems] = useState([
             {name:'Pinky',avatar:'example',id:1},
             {name:'Army Green',avatar:'example',id:2},
@@ -35,7 +37,7 @@ const HomeScreen = () => {
     }
 
     const clickHandlerSelected = id => {
-        console.log('navigate to selected');
+        navigate('/web-theme');
     }
 
     return ( 

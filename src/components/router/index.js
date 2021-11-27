@@ -1,6 +1,7 @@
 import HomeScreen from "../../container/homescreen";
 import SettingsScreen from "../../container/settingscreen";
 import FavoritesScreen from "../../container/favoritesscreen";
+import WebThemeConfigScreen from "../../container/webthemeconfigscreen";
 
 import {
     MemoryRouter,
@@ -16,6 +17,7 @@ const Routing = () => {
                 <Route path="/" element={<HomeScreen />} />
                 <Route path="settings" element={<SettingsScreen />} />
                 <Route path="favorites" element={<FavoritesScreen />} />
+                <Route path="web-theme" element={<WebThemeConfigScreen />} />
             </Routes>
         </MemoryRouter>
     );

@@ -1,0 +1,59 @@
+$dark-blue: rgb(25, 39, 52);
+$icon-size: 125px;
+
+.theme-content{
+    overflow-y: auto;
+    overflow-x: hidden;
+    .head-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .profile-icon{
+            display: flex;
+            .avatar-icon {
+                height: $icon-size;
+                width: $icon-size;
+                margin-bottom: 10px;
+            }
+            .edit-icon-container{
+                display: flex;
+                position: absolute;
+                height: $icon-size;
+                width: $icon-size;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+
+                .icon-button {
+                    display: flex;
+                    flex-direction: column;
+                    color: lightgray;
+                }
+            }
+        }
+        .profile-icon:hover{
+            .avatar-icon {
+                filter: blur(1px) brightness(30%);
+            }
+
+            .edit-icon-container{
+                opacity: 100%;
+            }
+        }
+    }
+
+    .input-field {
+        margin: 10px 0;
+
+        .MuiInputLabel-root{
+            color: tan;
+            background-color: $dark-blue;
+        }
+        .MuiOutlinedInput-root{
+            color: tan;
+            border: 1px solid tan;
+        }
+    }
+}
