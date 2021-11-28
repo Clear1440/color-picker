@@ -5,19 +5,18 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import ListItemButton from "@mui/material/ListItemButton";
-// import Button from "@mui/material/Button";
 //CUSTOM COMPONENTS
 import NavBar from "./home-navbar";
 //STYLES
 import "../../stylesheets/layout/page.scss"
 import {useNavigate} from "react-router-dom";
-import {changeColor} from "../../scripts/colorChanger";
+import {changeColor, unsetChangeColor} from "../../scripts/colorChanger";
 
 const HomeScreen = () => {
     let navigate = useNavigate();
     const [items,setItems] = useState([
-            {name:'Pinky',avatar:'example',id:1, style: [{id: "page", style: "background-color: green"}]},
-            {name:'Army Green',avatar:'example',id:2, style: [{id: "page", style: "background-color: red"}]},
+            {name:'Pinky',avatar:'example',id:1, style: [{id: "page", style: "background-color: pink; width: 200px"}]},
+            {name:'Army Green',avatar:'example',id:2, style: [{id: "page", style: "background-color: green"}]},
             {name:'Montaray',avatar:'example',id:3, style: [{id: "page", style: "background-color: yellow"}]},
             {name:'Mosago',avatar:'example',id:4, style: [{id: "page", style: "background-color: cyan"}]},
             {name:'Triage',avatar:'example',id:5, style: [{id: "page", style: "background-color: tan"}]},
@@ -29,11 +28,14 @@ const HomeScreen = () => {
         const _selectedItem = selectedItem;
         const _items = [...items];
         const index = items.findIndex(item => item.id === id);
+        //remove color styling
+        await unsetChangeColor(_selectedItem.style);
         //Set selected item
         setSelectedItem(items[index]);
         _items.splice(index, 1);
         _items.push(_selectedItem);
         setItems(_items.sort((a,b) =>  a.name.localeCompare(b.name)));
+        //apply new color styling
         await changeColor(items[index].style);
     }
 
