@@ -11,21 +11,21 @@ import NavBar from "./home-navbar";
 //STYLES
 import "../../stylesheets/layout/page.scss"
 import {useNavigate} from "react-router-dom";
-
+import {changeColor} from "../../scripts/colorChanger";
 
 const HomeScreen = () => {
     let navigate = useNavigate();
     const [items,setItems] = useState([
-            {name:'Pinky',avatar:'example',id:1},
-            {name:'Army Green',avatar:'example',id:2},
-            {name:'Montaray',avatar:'example',id:3},
-            {name:'Mosago',avatar:'example',id:4},
-            {name:'Triage',avatar:'example',id:5},
-            {name:'Klimindor',avatar:'example',id:6}]);
+            {name:'Pinky',avatar:'example',id:1, style: [{id: "page", style: "background-color: green"}]},
+            {name:'Army Green',avatar:'example',id:2, style: [{id: "page", style: "background-color: red"}]},
+            {name:'Montaray',avatar:'example',id:3, style: [{id: "page", style: "background-color: yellow"}]},
+            {name:'Mosago',avatar:'example',id:4, style: [{id: "page", style: "background-color: cyan"}]},
+            {name:'Triage',avatar:'example',id:5, style: [{id: "page", style: "background-color: tan"}]},
+            {name:'Klimindor',avatar:'example',id:6, style: [{id: "page", style: "background-color: brown"}]}]);
 
-    const [selectedItem, setSelectedItem] = useState({name:'Blues',avatar:'example',id:7,selected:false});
+    const [selectedItem, setSelectedItem] = useState({name:'default',avatar:'example',id:7, style: [{id: "page", style: "background-color: #192734"}]});
 
-    const clickHandler = id => {
+    const clickHandler = async id => {
         const _selectedItem = selectedItem;
         const _items = [...items];
         const index = items.findIndex(item => item.id === id);
@@ -34,6 +34,7 @@ const HomeScreen = () => {
         _items.splice(index, 1);
         _items.push(_selectedItem);
         setItems(_items.sort((a,b) =>  a.name.localeCompare(b.name)));
+        await changeColor(items[index].style);
     }
 
     const clickHandlerSelected = id => {
@@ -41,7 +42,7 @@ const HomeScreen = () => {
     }
 
     return ( 
-        <div className="page">
+        <div className="page" id="page">
             <NavBar/>
             <ListItemButton onClick={() => clickHandlerSelected(selectedItem.id)} className="entry-wrapper">
                     <ListItem className="entry-item selected">

@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import "./navbar.scss";
 import { IconButton } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
