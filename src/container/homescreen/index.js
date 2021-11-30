@@ -10,19 +10,30 @@ import NavBar from "./home-navbar";
 //STYLES
 import "../../stylesheets/layout/page.scss"
 import {useNavigate} from "react-router-dom";
-import {changeColor, unsetChangeColor} from "../../scripts/colorChanger";
+import {changeColor, unsetChangeColor} from "../../scripts/content";
 
 const HomeScreen = () => {
     let navigate = useNavigate();
     const [items,setItems] = useState([
-            {name:'Pinky',avatar:'example',id:1, style: [{id: "page", style: "background-color: pink; width: 200px"}]},
-            {name:'Army Green',avatar:'example',id:2, style: [{id: "page", style: "background-color: green"}]},
-            {name:'Montaray',avatar:'example',id:3, style: [{id: "page", style: "background-color: yellow"}]},
-            {name:'Mosago',avatar:'example',id:4, style: [{id: "page", style: "background-color: cyan"}]},
-            {name:'Triage',avatar:'example',id:5, style: [{id: "page", style: "background-color: tan"}]},
-            {name:'Klimindor',avatar:'example',id:6, style: [{id: "page", style: "background-color: brown"}]}]);
+            {name:'tan header',avatar:'example',id:1, style: [
+                    {id: "site-nav", style: "background-color: tan;"},
+                    {id: "site-nav-desktop-item", style: "background-color: black"},
+                    {id: "filter-subnav", style: "background-color: darkgrey"},
+                    {id: "wrap-inner", style: "background-color: darkgrey"}
+                ]},
+            {name:'grey background',avatar:'example',id:2, style: [
+                {id: "site-nav-desktop-item", style: "background-color: black"},
+                    {id: "filter-subnav", style: "background-color: darkgrey"},
+                    {id: "wrap-inner", style: "background-color: darkgrey"}]},
+            {name:'pink',avatar:'example',id:3, style: [
+                    {id: "site-nav", style: "background-color: pink;"},
+                    {id: "site-nav-desktop-item", style: "background-color: pink"},
+                    {id: "filter-subnav", style: "background-color: pink"},
+                    {id: "wrap-inner", style: "background-color: pink"}]
+            },
+    ]);
 
-    const [selectedItem, setSelectedItem] = useState({name:'default',avatar:'example',id:7, style: [{id: "page", style: "background-color: #192734"}]});
+    const [selectedItem, setSelectedItem] = useState({name:'default',avatar:'example',id:7, style: [{id: "page", style: "none"}]});
 
     const clickHandler = async id => {
         const _selectedItem = selectedItem;

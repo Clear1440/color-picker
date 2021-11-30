@@ -40,6 +40,7 @@ $dark-blue: rgb(25, 39, 52);
 
     .entry-wrapper{
         width: 100%;
+        height: min-content;
         display: flex;
         align-content: center;
         justify-content: center;
