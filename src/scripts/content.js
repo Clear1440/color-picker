@@ -1,8 +1,8 @@
-console.log('hello pub', document);
+console.log('hello gen', document);
 
 export const changeColor = (styles) => {
+    console.log('this is running')
     styles?.forEach(element => {
-        console.log('change pub', document);
         document.getElementById(element.id)?.setAttribute("style", element.style)
     })
 }
