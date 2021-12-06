@@ -40,14 +40,14 @@ const HomeScreen = () => {
         const _items = [...items];
         const index = items.findIndex(item => item.id === id);
         //remove color styling
-        await unsetChangeColor(_selectedItem.style);
+        unsetChangeColor(_selectedItem.style);
         //Set selected item
         setSelectedItem(items[index]);
         _items.splice(index, 1);
         _items.push(_selectedItem);
         setItems(_items.sort((a,b) =>  a.name.localeCompare(b.name)));
         //apply new color styling
-        await changeColor(items[index].style);
+        changeColor(items[index].style);
     }
 
     const clickHandlerSelected = id => {

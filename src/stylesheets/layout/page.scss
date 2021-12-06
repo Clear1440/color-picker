@@ -32,7 +32,7 @@ $dark-blue: rgb(25, 39, 52);
 
     .content {
         overflow: auto;
-        height: auto;
+        height: inherit;
     }
     .selected {
         margin-right: 10px;
