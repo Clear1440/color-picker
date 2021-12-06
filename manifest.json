@@ -10,12 +10,6 @@
       "http://*/*", 
       "https://*/*"
     ],
-    "content_scripts": [{
-      "matches": ["<all_urls>"],
-      "js": ["src/scripts/content.js"],
-      "run_at": "document_end",
-      "all_frames": true
-    }],
     "browser_action": {
       "default_popup": "build/index.html",
       "default_icon": {
