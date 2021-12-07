@@ -1,6 +1,6 @@
 package com.spt.controller;
 
-import com.spt.atom.User;
+import com.spt.atom.UserAtom;
 import com.spt.atom.UsersAppThemeProjection;
 import com.spt.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,22 +21,22 @@ public class UsersController {
     }
 
     @GetMapping(value= "")
-    public ResponseEntity<List<User>> getUsers(){
+    public ResponseEntity<List<UserAtom>> getUsers(){
         return new ResponseEntity<>(usersService.fetchAllUsers(), HttpStatus.OK);
     }
 
     @GetMapping(value="/get-user/{id}")
-    public ResponseEntity<User> getUserById(@ModelAttribute("id") com.spt.entity.User user){
+    public ResponseEntity<UserAtom> getUserById(@ModelAttribute("id") com.spt.entity.User user){
         return new ResponseEntity<>(user.toAtom(), HttpStatus.OK);
     }
 
     @GetMapping(value="/get-users-by-active-status/{active}")
-    ResponseEntity<List<User>> getUsersByActiveStatus(@PathVariable("active") boolean status){
+    ResponseEntity<List<UserAtom>> getUsersByActiveStatus(@PathVariable("active") boolean status){
         return new ResponseEntity<>(usersService.fetchUsersByActiveStatus(status), HttpStatus.OK);
     }
 
     @GetMapping(value="/get-users-by-email-domain/{domain}")
-    ResponseEntity<List<User>> getUsersByUsernameDomain(@PathVariable("domain") String domain){
+    ResponseEntity<List<UserAtom>> getUsersByUsernameDomain(@PathVariable("domain") String domain){
         return new ResponseEntity<>(usersService.fetchUserByUsernameDomain(domain), HttpStatus.OK);
     }
 

@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
+public class UserAtom {
     private int userid;
     private String firstname;
     private String lastname;

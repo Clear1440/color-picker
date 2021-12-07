@@ -32,7 +32,7 @@ create table user_prefences (
 --  these are localized app themes (managed externally)
 create table web_themes ( 
 	web_theme_id int NOT NULL AUTO_INCREMENT,
-	theme JSON,
+	theme varchar(255),
 	associated_url varchar(255),
 	date_created datetime DEFAULT CURRENT_TIMESTAMP, 
 	date_updated datetime DEFAULT NULL ON UPDATE current_timestamp, 

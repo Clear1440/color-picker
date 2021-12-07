@@ -1,18 +1,18 @@
 package com.spt.service;
 
-import com.spt.atom.User;
+import com.spt.atom.UserAtom;
 import com.spt.atom.UsersAppThemeProjection;
 
 import java.util.List;
 
 public interface UsersService {
-    List<User> fetchAllUsers();
+    List<UserAtom> fetchAllUsers();
 
-    User fetchUserById(int id);
+    UserAtom fetchUserById(int id);
 
-    List<User> fetchUsersByActiveStatus(boolean status);
+    List<UserAtom> fetchUsersByActiveStatus(boolean status);
 
-    List<User> fetchUserByUsernameDomain(String domain);
+    List<UserAtom> fetchUserByUsernameDomain(String domain);
 
     UsersAppThemeProjection fetchColorPaletteById(int id);
 }
