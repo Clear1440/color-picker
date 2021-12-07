@@ -58,7 +58,6 @@ const HomeScreen = () => {
             styleScript.innerHTML = css;
             document.head.appendChild(styleScript);
         }
-
         //put ^ in the webpage
         chrome.tabs.executeScript({
             code: `(${styleFunc})('${customCSS.replace(/\n/g, ' ')}');`

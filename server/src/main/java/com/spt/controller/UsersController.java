@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/rest/v1/users")
+@CrossOrigin(origins ="*", maxAge = 3600)
 public class UsersController {
     private final UsersService usersService;
 
@@ -26,21 +27,21 @@ public class UsersController {
 
     @GetMapping(value="/get-user/{id}")
     public ResponseEntity<User> getUserById(@ModelAttribute("id") com.spt.entity.User user){
-        return new ResponseEntity<User>(user.toAtom(), HttpStatus.OK);
+        return new ResponseEntity<>(user.toAtom(), HttpStatus.OK);
     }
 
     @GetMapping(value="/get-users-by-active-status/{active}")
     ResponseEntity<List<User>> getUsersByActiveStatus(@PathVariable("active") boolean status){
-        return new ResponseEntity<List<User>>(usersService.fetchUsersByActiveStatus(status), HttpStatus.OK);
+        return new ResponseEntity<>(usersService.fetchUsersByActiveStatus(status), HttpStatus.OK);
     }
 
     @GetMapping(value="/get-users-by-email-domain/{domain}")
     ResponseEntity<List<User>> getUsersByUsernameDomain(@PathVariable("domain") String domain){
-        return new ResponseEntity<List<User>>(usersService.fetchUserByUsernameDomain(domain), HttpStatus.OK);
+        return new ResponseEntity<>(usersService.fetchUserByUsernameDomain(domain), HttpStatus.OK);
     }
 
     @GetMapping(value="/get-color-palette/{id}")
     ResponseEntity<UsersAppThemeProjection> getColorPaletteByUserid(@PathVariable("id") int id){
-        return new ResponseEntity<UsersAppThemeProjection>(usersService.fetchColorPaletteById(id),HttpStatus.OK);
+        return new ResponseEntity<>(usersService.fetchColorPaletteById(id), HttpStatus.OK);
     }
 }
