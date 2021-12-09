@@ -11,42 +11,15 @@ import NavBar from "./home-navbar";
 //STYLES
 import "../../stylesheets/layout/page.scss"
 import {useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const HomeScreen = () => {
     let navigate = useNavigate();
-    const [items,setItems] = useState([
-            {
-                name:'tan header',
-                avatar:'example',
-                id:1, 
-                style: `.site-nav { 
-                    background-color: tan
-                }`
-            },{
-                name:'grey header',
-                avatar:'example',
-                id:2,
-                style: 
-                    `.site-nav {
-                        background-color: grey
-                    }`
-            },{
-                name:'pink header',
-                avatar:'example',
-                id:3, 
-                style: 
-                    `.site-nav {
-                        background-color: pink
-                    }`
-            },
-    ]);
-
-    const [selectedItem, setSelectedItem] = useState({
-        name:'default',
-        avatar:'example',
-        id:7, 
-        style: ""
-    });
+    const exampleSet = useSelector(state => state.exampleSetOfThemes);
+    const [selectedItem, setSelectedItem] = useState(exampleSet[3]);
+    const [items,setItems] = useState(exampleSet.filter(a => {
+        return a.id !== selectedItem.id
+    }));
 
     const addCustomStyling = (customCSS) => {
         const styleFunc = (css) => {
