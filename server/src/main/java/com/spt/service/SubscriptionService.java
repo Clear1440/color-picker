@@ -6,8 +6,7 @@ import java.util.List;
 
 public interface SubscriptionService {
     List<SubscriptionAtom> fetchAll();
-    SubscriptionAtom fetchSubscription(int id);
     SubscriptionAtom createSubscription(SubscriptionAtom subscription);
-    SubscriptionAtom updateSubscription(SubscriptionAtom subscriptionUpdates, Subscription subscriptionToEdit);
+//    SubscriptionAtom updateSubscription(Subscription subscriptionToEdit, SubscriptionAtom subscriptionUpdates);
     SubscriptionAtom deleteSubscription(Subscription subscription);
 }

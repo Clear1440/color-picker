@@ -49,8 +49,8 @@ public class WebThemeController {
     }
 
     @DeleteMapping(value="/{id}")
-    public ResponseEntity<WebThemeAtom> deleteThemeById(@PathVariable("id") WebTheme id){
-        return new ResponseEntity<>( webThemeService.deleteTheme(id), HttpStatus.OK);
+    public ResponseEntity<WebThemeAtom> deleteThemeById(@ModelAttribute("id") WebTheme webTheme){
+        return new ResponseEntity<>( webThemeService.deleteTheme(webTheme), HttpStatus.OK);
     }
 
     @GetMapping(value = "/get-theme-by-associated-url/{url}")

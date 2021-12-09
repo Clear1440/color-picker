@@ -7,6 +7,7 @@ import com.spt.repository.SubscriptionRepository;
 import com.spt.service.SubscriptionService;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,24 +24,26 @@ public class SubscriptionServiceImpl implements SubscriptionService {
     }
 
     @Override
-    public SubscriptionAtom fetchSubscription(int id) {
-        return subscriptionRepository.findById(id).toAtom();
-    }
-
-    @Override
     public SubscriptionAtom createSubscription(SubscriptionAtom subscriptionAtom) {
         Subscription subscription = new Subscription();
-        return
+        return mergeAndSave(subscription, subscriptionAtom);
     }
 
-    @Override
-    public SubscriptionAtom updateSubscription(SubscriptionAtom subscriptionUpdates, Subscription subscriptionToEdit) {
-        return null;
-    }
+//    @Override
+//    public SubscriptionAtom updateSubscription(Subscription subscriptionToEdit, SubscriptionAtom subscriptionUpdates) {
+//        return mergeAndSave(subscriptionToEdit, subscriptionUpdates);
+//    }
 
     @Override
     public SubscriptionAtom deleteSubscription(Subscription subscription) {
-        return null;
+        subscription.setDateDeleted(new Date());
+        return subscriptionRepository.save(subscription).toAtom();
+    }
+
+    public SubscriptionAtom mergeAndSave(Subscription subscriptionToEdit, SubscriptionAtom subscriptionUpdates){
+        subscriptionToEdit.setUserId(subscriptionUpdates.getUserId());
+        subscriptionToEdit.setWebThemeId(subscriptionUpdates.getWebThemeId());
+        return subscriptionRepository.save(subscriptionToEdit).toAtom();
     }
 
 }

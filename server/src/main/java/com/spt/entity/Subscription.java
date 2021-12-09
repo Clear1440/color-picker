@@ -1,7 +1,6 @@
 package com.spt.entity;
 
 import com.spt.atom.SubscriptionAtom;
-import com.spt.atom.UserAtom;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 
@@ -13,10 +12,10 @@ import java.util.Date;
 public class Subscription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="subscriptionid", unique = true, nullable = false)
-    private int subcriptionId;
+    @Column(name="subscription_id", unique = true, nullable = false)
+    private int subscriptionId;
 
-    @Column(length=10, name="userid")
+    @Column(length=10, name="user_id")
     private int userId;
 
     @Column(length=10, name="web_theme_id")
