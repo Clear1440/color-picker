@@ -6,6 +6,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import ListItemButton from "@mui/material/ListItemButton";
+import Button from "@mui/material/Button";
 //CUSTOM COMPONENTS
 import NavBar from "./home-navbar";
 //STYLES
@@ -59,27 +60,40 @@ const HomeScreen = () => {
     return ( 
         <div className="page" id="page">
             <NavBar/>
-            <ListItemButton onClick={() => clickHandlerSelected(selectedItem.id)} className="entry-wrapper">
-                    <ListItem className="entry-item selected">
-                                <ListItemAvatar>
-                            <Avatar src=""/>
-                        </ListItemAvatar>
-                        <h6>{selectedItem.name}</h6>
-                    </ListItem>
-            </ListItemButton>
-            <h5>Available Profiles for This Site</h5>
-                <List className="content">
-                    { items?.map((entry) => 
-                    <ListItemButton key={entry.id} onClick={() => clickHandler(entry.id)} className="entry-wrapper">
-                            <ListItem className="entry-item" >
-                                <ListItemAvatar>
+            {items.length > 0 ?
+                <>
+                    <ListItemButton onClick={() => clickHandlerSelected(selectedItem.id)} className="entry-wrapper">
+                            <ListItem className="entry-item selected">
+                                        <ListItemAvatar>
                                     <Avatar src=""/>
                                 </ListItemAvatar>
-                                <h6>{entry.name}</h6>
+                                <h6>{selectedItem.name}</h6>
                             </ListItem>
                     </ListItemButton>
-                    )}           
-                </List> 
+                    <h5>Available Profiles for This Site</h5>
+                    <List className="content">
+                            { items?.map((entry) => 
+                            <ListItemButton key={entry.id} onClick={() => clickHandler(entry.id)} className="entry-wrapper">
+                                    <ListItem className="entry-item" >
+                                        <ListItemAvatar>
+                                            <Avatar src=""/>
+                                        </ListItemAvatar>
+                                        <h6>{entry.name}</h6>
+                                    </ListItem>
+                            </ListItemButton>
+                            )}           
+                        </List>
+                </>
+                :
+                <div className="create-style-container">
+                    <h6>
+                        Looks like there arent any styles for this site. <br/>Make one down below!
+                    </h6>
+                    <Button variant="contained" className="tan-button" onClick={() => navigate("web-theme")}>
+                        Create Style
+                    </Button>
+                </div>
+            }
             {/* <Button className="market-button" variant="contained">MarketPlace</Button>  */}
         </div>
     );

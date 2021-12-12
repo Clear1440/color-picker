@@ -4,15 +4,26 @@ import NavBar from './web-theme-navbar';
 //styles
 import "./webThemeStyles.scss";
 import "../../stylesheets/layout/page.scss"
-import {Avatar, FormControl, IconButton, TextField} from "@mui/material";
+import {Avatar, Button, FormControl, IconButton, TextField} from "@mui/material";
 import CreateIcon from '@mui/icons-material/Create';
+import actions from '../../components/actions/actions';
+import {useNavigate} from "react-router-dom";
+
 
 const WebThemeConfigScreen = () => {
+    let navigate = useNavigate();
+
     const [themeInfo, setThemeInfo] = useState({
-        name: "theme one name",
-        url: "http://localhost/**",
-        css: ""
+        name: "",
+        associatedUrl: "",
+        theme: ""
     });
+
+
+    const onSave = () => {
+        actions.createWebTheme(themeInfo);
+        navigate("/");
+    }
 
     return(
         <div className="page">
@@ -47,13 +58,13 @@ const WebThemeConfigScreen = () => {
 
                     <TextField
                         className="input-field"
-                        value={themeInfo.url}
+                        value={themeInfo.associatedUrl}
                         label="Associated Url"
                         name="Associated Url"
                         onChange={(e) =>
                             setThemeInfo({
                                 ...themeInfo,
-                                url: e.currentTarget.value
+                                associatedUrl: e.currentTarget.value
                             })
                         }
                     >
@@ -61,7 +72,7 @@ const WebThemeConfigScreen = () => {
 
                     <TextField
                         className="input-field multiline"
-                        value={themeInfo.css}
+                        value={themeInfo.theme}
                         label="Custom CSS"
                         name="Custom CSS"
                         multiline={true}
@@ -70,12 +81,14 @@ const WebThemeConfigScreen = () => {
                         onChange={(e) =>
                             setThemeInfo({
                                 ...themeInfo,
-                                css: e.currentTarget.value
+                                theme: e.currentTarget.value
                             })
                         }
                     >
                     </TextField>
-
+                    <Button variant="contained" className="tan-button" onClick={() => onSave()}>
+                        Save
+                    </Button>
                 </FormControl>
             </div>
 

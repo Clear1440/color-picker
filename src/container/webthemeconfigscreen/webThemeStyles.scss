@@ -58,4 +58,15 @@ $icon-size: 125px;
             border: 1px solid tan;
         }
     }
+
+    .tan-button {
+        border-radius: 30px;
+        background-color: tan;
+        width: 50%;
+        align-self: center;
+        margin: 20px 0 ;
+    }
+    .tan-button:hover {
+        background-color: #c09967;
+    }
 }

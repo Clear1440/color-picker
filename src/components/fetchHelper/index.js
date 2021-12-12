@@ -17,6 +17,9 @@ class fetchHelper{
         {
             method: 'POST',
             body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            },
             ...options
         });
     }
@@ -26,6 +29,9 @@ class fetchHelper{
         {
             method: 'PATCH',
             body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            },
             ...options
         });
     }
@@ -35,11 +41,14 @@ class fetchHelper{
         {
             method: 'PUT',
             body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            },
             ...options
         });
     }
 
-    DELETE = ({path, data, options}) => {
+    DELETE = ({path, options}) => {
         return fetch(BASE_URL + path, 
         {
             method: 'DELETE',

@@ -11,6 +11,14 @@ class Actions{
         return web_theme_dispatcher.fetchWebTheme(id);
     }
 
+    async createWebTheme (data){
+        try{
+            return await web_theme_dispatcher.createWebTheme(data);
+        }catch(e){
+            return e;
+        }
+    }
+
 }
 
 export default new Actions();
