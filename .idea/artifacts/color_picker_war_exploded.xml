@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="color-picker:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/color_picker_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="color-picker/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="color-picker" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
